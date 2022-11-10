@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block subtitle %}
+    Admin Sign In
+{% endblock %}
+
+{% block content %}
+    <h1>Admin Signin</h1>
+    <form action="" method="post">
+        {% csrf_token %}
+        {{ form|crispy }}
+        <input type="submit" value="Sign In">
+        <a href="{% url 'google_login' %}">Google</a>
+    </form>
+{% endblock %}
+    
+    

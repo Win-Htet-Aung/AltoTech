@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block subtitle %}
+    Signin
+{% endblock %}
+
+{% block content %}
+    <div class="container mt-3 ml-3 mr-3">
+        <form action="" method="post">
+            {% csrf_token %}
+            {{ form|crispy }}
+            <div class="d-flex">
+                <input type="submit" class="btn btn-primary" value="Sign In">
+                <a href="{% url 'admin_signin' %}" class="pt-2 mx-2">Sign in as admin</a>
+            </div>
+        </form>
+    </div>
+{% endblock %}
+        

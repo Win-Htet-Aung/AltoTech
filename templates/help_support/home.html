@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block subtitle %}
+    Help & Support
+{% endblock %}
+    
+{% block content %}
+    <div class="container">
+        {% for issue in issues %}
+            <div class="card mb-3 mt-3" style="width: 18rem;">
+                <div class="card-body">
+                    <h4 class="card-title">{{ issue.title }}</h4>
+                    <h6 class="card-subtitle mb-2 text-muted">Status : {{ issue.status }}</h6>
+                    <h6 class="card-subtitle mb-2 text-muted">Software Version : {{ issue.software_version }}</h6>
+                    <p class="card-text">{{ issue.description }}</p>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
